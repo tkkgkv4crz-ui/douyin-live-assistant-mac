@@ -1,0 +1,66 @@
+{
+  "name": "douyin-live-assistant",
+  "version": "1.0.0",
+  "description": "macOS 抖音直播助手 - 实时弹幕/数据看板/自动回复/OBS控制",
+  "main": "./out/main/main.js",
+  "author": "Douyin Live Assistant",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "dist": "npm run build && electron-builder",
+    "dist:mac": "npm run build && electron-builder --mac"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.7",
+    "obs-websocket-js": "^5.0.4",
+    "protobufjs": "^7.2.6",
+    "ws": "^8.16.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/ws": "^8.5.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.17",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.0",
+    "electron-vite": "^2.0.0",
+    "lucide-react": "^0.400.0",
+    "postcss": "^8.4.33",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  },
+  "build": {
+    "productName": "抖音直播助手",
+    "appId": "com.douyin.liveassistant",
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "category": "public.app-category.utilities",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "sign": false
+    }
+  }
+}
