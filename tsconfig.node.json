@@ -6,7 +6,12 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "types": ["electron-vite/node"]
   },
-  "include": ["electron/**/*.ts", "vite.config.ts"]
+  "include": ["electron/**/*.ts", "src/**/*.ts", "src/**/*.d.ts", "*.config.ts"]
 }

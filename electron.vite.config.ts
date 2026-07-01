@@ -8,7 +8,9 @@ export default defineConfig({
     build: {
       outDir: 'out/main',
       rollupOptions: {
-        input: { index: path.resolve(__dirname, 'electron/main.ts') }
+        input: {
+          index: path.resolve(__dirname, 'electron/main.ts')
+        }
       }
     }
   },
@@ -17,7 +19,9 @@ export default defineConfig({
     build: {
       outDir: 'out/preload',
       rollupOptions: {
-        input: { index: path.resolve(__dirname, 'electron/preload.ts') }
+        input: {
+          index: path.resolve(__dirname, 'electron/preload.ts')
+        }
       }
     }
   },
@@ -26,7 +30,9 @@ export default defineConfig({
     build: {
       outDir: 'out/renderer',
       rollupOptions: {
-        input: { index: path.resolve(__dirname, 'index.html') }
+        input: {
+          index: path.resolve(__dirname, 'index.html')
+        }
       }
     },
     plugins: [react()],

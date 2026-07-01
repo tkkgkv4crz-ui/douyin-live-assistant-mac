@@ -2,7 +2,7 @@
   "name": "douyin-live-assistant",
   "version": "1.0.0",
   "description": "macOS 抖音直播助手 - 实时弹幕/数据看板/自动回复/OBS控制",
-  "main": "./out/main/main.js",
+  "main": "./out/main/index.js",
   "author": "Douyin Live Assistant",
   "license": "MIT",
   "scripts": {
@@ -41,16 +41,27 @@
   "build": {
     "productName": "抖音直播助手",
     "appId": "com.douyin.liveassistant",
-    "directories": { "output": "release" },
+    "directories": {
+      "output": "release"
+    },
     "mac": {
       "target": [
-        { "target": "dmg", "arch": ["x64", "arm64"] },
-        { "target": "zip", "arch": ["x64", "arm64"] }
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
       ],
       "category": "public.app-category.utilities",
-      "hardenedRuntime": true,
-      "gatekeeperAssess": false
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "identity": null
     },
-    "dmg": { "sign": false }
+    "dmg": {
+      "sign": false
+    }
   }
 }
